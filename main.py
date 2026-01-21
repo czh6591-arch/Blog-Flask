@@ -47,6 +47,9 @@ class Posts(db.Model):
     date = db.Column(db.String(12), nullable=True)
     img_file = db.Column(db.String(12), nullable=True)
 
+with app.app_context():
+    db.create_all()
+
 
 @app.route("/")
 def home():
